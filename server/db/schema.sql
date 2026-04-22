@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS bookmarks (
+    id SERIAL PRIMARY KEY,
+    nct_id TEXT NOT NULL UNIQUE,
+    title TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS summaries (
+    id SERIAL PRIMARY KEY,
+    nct_id TEXT NOT NULL UNIQUE,
+    summary TEXT NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
