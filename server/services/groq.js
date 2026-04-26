@@ -4,7 +4,7 @@ const groq = new Groq({apiKey: process.env.GROQ_API_KEY});
 
 export async function getGroqSummary(eligibilityText) {
     const chat = await groq.chat.completions.create({
-        model: 'llama3-8b-8192',
+        model: 'llama-3.3-70b-versatile',
         messages:[
             {role: 'system',
 content: `You are a clinical trial assistant helping patients understand if they qualify for a trial.
