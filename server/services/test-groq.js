@@ -1,6 +1,6 @@
 //isolated unit test for groq query
 
-// run with    node --env-file=.env server/test-groq.js
+// run with    node --env-file=.env server/services/test-groq.js 
 import { getGroqSummary } from './groq.js';
 
 const testEligibilityText = `
