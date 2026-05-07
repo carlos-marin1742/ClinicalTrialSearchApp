@@ -1,0 +1,236 @@
+
+.trial-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.25rem 1.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  font-family: 'DM Sans', 'Geist', system-ui, sans-serif;
+}
+
+.trial-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  border-color: #c9cfd8;
+}
+
+/* ── Header ── */
+.trial-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.trial-card__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* NCT ID */
+.trial-card__nct-id {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Status badge */
+.trial-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+
+.trial-card__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.trial-card__status--recruiting {
+  color: var(--color-recruiting, #16a34a);
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+.trial-card__status--completed {
+  color: var(--color-completed, #6b7280);
+  background: #f9fafb;
+  border-color: #e5e7eb;
+}
+.trial-card__status--active {
+  color: var(--color-active, #2563eb);
+  background: var(--color-accent-light, #eff4ff);
+  border-color: #bfdbfe;
+}
+.trial-card__status--suspended,
+.trial-card__status--terminated,
+.trial-card__status--withdrawn {
+  color: #b45309;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+.trial-card__status--unknown {
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  border-color: var(--color-border);
+}
+
+/* Phase badge */
+.trial-card__phase {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* ── Bookmark button ── */
+.trial-card__bookmark {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 6px;
+  color: var(--color-text-muted);
+  transition: color 0.15s ease, background 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.trial-card__bookmark:hover {
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+
+.trial-card__bookmark--active {
+  color: var(--color-accent);
+}
+
+.trial-card__bookmark--active:hover {
+  color: #1d4ed8;
+}
+
+/* ── Title ── */
+.trial-card__title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  margin: 0;
+  /* clamp to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Conditions tags ── */
+.trial-card__conditions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.trial-card__tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.trial-card__tag--overflow {
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  border-color: #bfdbfe;
+}
+
+/* ── Summary section ── */
+.trial-card__summary-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+  margin-top: 0.125rem;
+}
+
+.trial-card__summary-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  transition: opacity 0.15s ease;
+}
+
+.trial-card__summary-toggle:hover {
+  opacity: 0.75;
+}
+
+.trial-card__summary-body {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--color-text-primary);
+}
+
+.trial-card__summary-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.trial-card__spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.trial-card__summary-error {
+  margin: 0;
+  color: #dc2626;
+  font-size: 0.8rem;
+}
+
+.trial-card__summary-text {
+  margin: 0;
+  white-space: pre-line;
+}
